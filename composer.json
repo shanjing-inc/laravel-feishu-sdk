@@ -1,0 +1,29 @@
+{
+    "name": "shanjing/laravel-feishu-sdk",
+    "description": "在 laravel 框架中使用的飞书 SDK。",
+    "authors": [
+        {
+            "name": "wys",
+            "email": "wys@shanjing-inc.com"
+        }
+    ],
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": "^8.0",
+        "laravel/framework": "^8.0",
+        "laravel/helpers": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Shanjing\\LaravelFeishuSdk\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shanjing\\LaravelFeishuSdk\\LaravelFeishuSdkServiceProvider"
+            ]
+        }
+    }
+}
