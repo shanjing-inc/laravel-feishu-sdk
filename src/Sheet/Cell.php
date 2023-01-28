@@ -24,4 +24,24 @@ class Cell extends BaseClient
 
         return $this->httpRequest('post', $url, $params, $accessToken);
     }
+
+    /**
+     * 查找单元格
+     *
+     * @param [type] $spreadsheetToken
+     * @param [type] $sheetId
+     * @param [type] $params
+     * @return array
+     * @author 王衍生 wys@shanjing-inc.com
+     *
+     * https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet/find
+     */
+    public function find($spreadsheetToken, $sheetId, $params)
+    {
+        $url = 'https://open.feishu.cn/open-apis/sheets/v3/spreadsheets/' . $spreadsheetToken . '/sheets/' . $sheetId . '/find';
+
+        $accessToken = Auth::getInternalTenantAccessToken($this->appId, $this->appSecret);
+
+        return $this->httpRequest('post', $url, $params, $accessToken);
+    }
 }

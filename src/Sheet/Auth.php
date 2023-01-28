@@ -18,7 +18,7 @@ class Auth extends BaseClient
      */
     public static function getInternalTenantAccessToken($appId, $appSecret)
     {
-        return Cache::remember('feishu:internal_tenant_access_token:' . $appId, now()->addMinutes(110), function () use ($appId, $appSecret) {
+        return Cache::remember('shanjing_laravel_feishu_sdk:internal_tenant_access_token:' . $appId, now()->addMinutes(110), function () use ($appId, $appSecret) {
             // 缓存 token
             $url        = 'https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal';
             $formParams = [

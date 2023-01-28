@@ -54,6 +54,6 @@ class Sheet extends BaseClient
 
         $accessToken = Auth::getInternalTenantAccessToken($this->appId, $this->appSecret);
 
-        return $this->httpRequest('post', $url, ['requests' => [$params]], $accessToken);
+        return $this->httpRequest('post', $url, $params, $accessToken);
     }
 }
